@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SVG</title>
+		<style>
+		
+		#container{
+			width:80%;
+			margin-left:auto;
+			margin-right:auto;}
+
+		#gray{
+			padding: 30px;
+			float:left;
+			opacity:1;
+			transition-duration:4s;
+		}
+		
+		#gray:hover{
+			transform:scale(.5) rotate(360deg);
+			transition-duration:1s;
+		}
+
+		#gray:active{
+			opacity: 0.1;
+			transition-duration:1s;
+		}
+
+		#pots{
+			float:left;
+			padding:30px;
+			transition-duration:1s;
+			position: relative;
+		}
+
+		#pots:hover{
+			transform: rotate(360deg);
+			transition-duration:1s;
+		}
+		#pots:active{
+			transform:scale(4);
+			transition-duration:10s;
+		}
+
+		#bw{
+			padding:30px;
+			opacity:0.25;
+			transition-duration:2s;
+		}
+
+		#bw:hover{
+			opacity:1;
+			transition-duration:2s;
+		}
+
+		#bw:active{
+			transform:rotate(360deg);
+			transition-duration:1s;
+		}
+
+		</style>		
+	</head>
+
+	<body>
+		<svg>
+		<div id="container">
+			<a href="http://metmuseum.org/collection/the-collection-online/search/44875" class="svg"><object id="gray" type="image/svg+xml" data="gray.svg"></object></a>
+
+			<a href="http://metmuseum.org/collection/the-collection-online/search/52344" class="svg"><object id="pots" type="image/svg+xml" data="pots.svg"></object></a>
+		
+			<a href="http://metmuseum.org/collection/the-collection-online/search/248677" class="svg"><object id="bw" type="image/svg+xml" data="bw.svg"></object></a>
+		</div>
+	</svg>
+	</body>
+</html>
