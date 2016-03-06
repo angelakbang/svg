@@ -5,59 +5,94 @@
 		<meta charset="UTF-8">
 		<title>SVG</title>
 		<style>
+
+		@keyframes floating{
+		0% {top: 100px; bottom: 0px;}
+        50%{top: 20px; bottom: 80px;}
+        100% {top: 100px; bottom: 0px;}
+    }
 		
 		#container{
-			width:80%;
+			width:90%;
 			margin-left:auto;
-			margin-right:auto;}
+			margin-right:auto;
+		}
+
+		#left{
+			width: 30%;
+			float: left;
+		}
+
+		#center{
+			width:30%;
+			float: left;
+		}
+
+		#right{
+			right: 30%;
+			float: left;
+		}
+		div.clear{
+			clear:both;
+		}
+
+		.svg-gray{
+			position: relative;
+			animation: floating 5s;
+			animation-iteration-count: infinite;
+			animation-direction: normal;
+		}
+
+		.svg-pots{
+			position: relative;
+			animation: floating 3s;
+			animation-iteration-count: infinite;
+			animation-direction: reverse;
+		}
+
+		.svg-bw{
+			position: relative;
+			animation: floating 2s;
+			animation-iteration-count: infinite;
+			animation-direction: reverse;
+		}
 
 		#gray{
 			padding: 30px;
 			float:left;
-			opacity:1;
-			transition-duration:4s;
+			opacity:.5;
+
 		}
 		
 		#gray:hover{
-			transform:scale(.5) rotate(360deg);
-			transition-duration:1s;
-		}
-
-		#gray:active{
-			opacity: 0.1;
-			transition-duration:1s;
+			transform:scale(1.5) rotate(360deg);
+			transition-duration:2s;
+			opacity:1;
 		}
 
 		#pots{
 			float:left;
-			padding:30px;
+			padding-left:80px;
 			transition-duration:1s;
-			position: relative;
+			opacity:.5;
 		}
 
 		#pots:hover{
-			transform: rotate(360deg);
-			transition-duration:1s;
-		}
-		#pots:active{
-			transform:scale(4);
-			transition-duration:10s;
+			opacity:1;
+			transform:scale(1.5) rotate(360deg);
+			transition-duration:3s;
 		}
 
 		#bw{
-			padding:30px;
-			opacity:0.25;
+			padding-left:100px;
+			opacity:.5;
 			transition-duration:2s;
 		}
 
 		#bw:hover{
 			opacity:1;
-			transition-duration:2s;
-		}
-
-		#bw:active{
-			transform:rotate(360deg);
-			transition-duration:1s;
+			transform:scale(1.5) rotate(360deg);
+			transition-duration:3s;
 		}
 
 		</style>		
@@ -66,12 +101,26 @@
 	<body>
 		<svg>
 		<div id="container">
-			<a href="http://metmuseum.org/collection/the-collection-online/search/44875" class="svg"><object id="gray" type="image/svg+xml" data="gray.svg"></object></a>
 
-			<a href="http://metmuseum.org/collection/the-collection-online/search/52344" class="svg"><object id="pots" type="image/svg+xml" data="pots.svg"></object></a>
-		
-			<a href="http://metmuseum.org/collection/the-collection-online/search/248677" class="svg"><object id="bw" type="image/svg+xml" data="bw.svg"></object></a>
+
+			<section id = "left">
+			<a href="http://metmuseum.org/collection/the-collection-online/search/44875" class="svg-gray"><object id="gray" type="image/svg+xml" data="gray.svg" width="300"></object></a>
+		</section>
+
+
+		<section id = "center">
+			<a href="http://metmuseum.org/collection/the-collection-online/search/52344" class="svg-pots"><object id="pots" type="image/svg+xml" data="pots.svg" width="300"></object></a>
+		</section>
+
+
+		<section id = "right">
+			<a href="http://metmuseum.org/collection/the-collection-online/search/248677" class="svg-bw"><object id="bw" type="image/svg+xml" data="bw.svg" width="300"></object></a>
+		</section>
+		<div class="clear"></div>
+
+
 		</div>
+
 	</svg>
 	</body>
 </html>
